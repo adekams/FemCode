@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Age Checker</title>
+</head>
+<body style="text-align: center;">
+    <h1>VOTING ELIGIBILITY CHECKER</h1>
+    <hr>
+    <h3 id="name"></h3>
+    <h3 id="yearOfBirth"></h3>
+    <h3 id="age"></h3>
+    <h3 id="VotingStatus"></h3>
+    <h3 id="error"></h3>
+    <button onclick="window.location = ''">Do Another Calculation</button>
+
+
+    <script>
+        let name = prompt("Enter your name here: ");
+        let yearOfBirth = parseInt(prompt("Enter year of birth here: "));
+
+        isNaN(yearOfBirth) ?
+        document.getElementById("error").innerHTML ="Sorry, please enter correct details, click the below button to try again ":
+        document.getElementById("name").innerHTML = "Name: " + name;
+
+        isNaN(yearOfBirth) ?
+        document.getElementById("error").innerHTML ="Sorry, please enter correct details, click the below button to try again ":
+        document.getElementById("age").innerHTML = "Age: " + (2020 - yearOfBirth);
+
+        isNaN(yearOfBirth) ?
+        document.getElementById("error").innerHTML ="Sorry, please enter correct details, click the below button to try again ":
+        (2020 - yearOfBirth >= 18) ?
+        document.getElementById("VotingStatus").innerHTML ="Voting Status: You are above 18, therefore, you are eligible to vote" :
+        document.getElementById("VotingStatus").innerHTML = "Voting Status: Your age bracket is below 18, therefore, you are not eligible to vote";
+
+    </script>
+</body>
+</html>
